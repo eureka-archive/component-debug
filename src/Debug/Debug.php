@@ -13,18 +13,16 @@ namespace Eureka\Component\Debug;
  * Debug helper class
  *
  * @author Romain Cottard
- * @version 2.1.0
  */
 class Debug
 {
-
     /**
      *  Display message (more graphical than 'echo()' )
      *
-     * @param      string  $message Message to display.
-     * @param      string  $title 'Title' for message.
-     * @param      boolean $exit If exit after displayed message.
-     * @return     void
+     * @param  string  $message Message to display.
+     * @param  string  $title 'Title' for message.
+     * @param  boolean $exit If exit after displayed message.
+     * @return void
      */
     static public function _echo($message, $title = '', $exit = false)
     {
@@ -35,7 +33,6 @@ class Debug
             echo '<div style="border-bottom: 1px solid black; background-color: #CCCCCC;">' . $title . '</div>';
             echo '<div style="background-color: #EEEEEE;"><pre>' . $message . '</pre></div>';
             echo '</div>';
-
         } else {
 
             if (!empty($title)) {
@@ -52,9 +49,9 @@ class Debug
     /**
      *  Display message (more graphical than 'echo()' )
      *
-     * @param      string  $message Message to display.
-     * @param      string  $title 'Title' for message.
-     * @return     void
+     * @param  string $message Message to display.
+     * @param  string $title 'Title' for message.
+     * @return void
      */
     static public function _echox($message, $title = '')
     {
@@ -81,7 +78,6 @@ class Debug
             echo '</table>';
             echo '</div>';
             echo '</div>';
-
         } else {
 
             if (is_array($var)) {
@@ -128,8 +124,8 @@ class Debug
     /**
      *  Display message (more graphical than 'var_export()' ) and exit.
      *
-     * @param  string  $var Message to display.
-     * @param  string  $title 'Title' for message.
+     * @param  string $var Message to display.
+     * @param  string $title 'Title' for message.
      * @return void
      */
     static public function _var_exportx($var, $title = '')
@@ -173,12 +169,11 @@ class Debug
     /**
      *  Display message (more graphical than 'var_dump()' ) and exit.
      *
-     * @param  string  $var Message to display.
-     * @param  string  $title 'Title' for message.
-     * @param  boolean $html If message is displayed in HTML or not.
+     * @param  string $var Message to display.
+     * @param  string $title 'Title' for message.
      * @return void
      */
-    static public function _var_dumpx($var, $title = '', $html = true)
+    static public function _var_dumpx($var, $title = '')
     {
         self::_var_dump($var, $title, true);
     }
@@ -203,5 +198,4 @@ class Debug
 
         self::_echo($message);
     }
-
 }
